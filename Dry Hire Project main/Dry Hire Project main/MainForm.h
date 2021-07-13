@@ -278,7 +278,7 @@ namespace DryHireProjectmain {
 	}
 	private: System::Void New_Button_Click(System::Object^ sender, System::EventArgs^ e) {
 
-		label1->Text = "Penis";
+		label1->Text = "Working lable change";
 
 
 
