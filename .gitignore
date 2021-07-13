@@ -1,0 +1,22 @@
+
+Dry Hire Project main/.vs/Dry Hire Project main/v16/.suo
+*.db
+*.db-shm
+*.db-wal
+*.ipch
+*.exe
+*.opendb
+*.pdb
+*.obj
+*.metagen
+*.sln
+*.cache
+*.tlog
+*.resources
+*.user
+*.filters
+*.vcxproj
+*.txt
+*.log
+*.recipe
+*.cpp
