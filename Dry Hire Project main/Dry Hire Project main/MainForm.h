@@ -50,6 +50,11 @@ namespace DryHireProjectmain {
 	private: System::Windows::Forms::Button^ SortDateOrderButton;
 	private: System::Windows::Forms::Button^ UndoLastSendButton;
 	private: System::Windows::Forms::Button^ EnableEditingButton;
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::Label^ label9;
+	private: System::Windows::Forms::MonthCalendar^ monthCalendar1;
+	private: System::Windows::Forms::MonthCalendar^ monthCalendar2;
+	private: System::Windows::Forms::TextBox^ textBox2;
 
 
 
@@ -90,13 +95,18 @@ namespace DryHireProjectmain {
 			this->SortDateOrderButton = (gcnew System::Windows::Forms::Button());
 			this->UndoLastSendButton = (gcnew System::Windows::Forms::Button());
 			this->EnableEditingButton = (gcnew System::Windows::Forms::Button());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->monthCalendar1 = (gcnew System::Windows::Forms::MonthCalendar());
+			this->monthCalendar2 = (gcnew System::Windows::Forms::MonthCalendar());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
-			this->label1->Location = System::Drawing::Point(112, 40);
+			this->label1->Location = System::Drawing::Point(77, 40);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(52, 20);
 			this->label1->TabIndex = 0;
@@ -147,7 +157,7 @@ namespace DryHireProjectmain {
 			// 
 			this->label6->AutoSize = true;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.25F));
-			this->label6->Location = System::Drawing::Point(111, 530);
+			this->label6->Location = System::Drawing::Point(94, 530);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(70, 25);
 			this->label6->TabIndex = 5;
@@ -239,18 +249,60 @@ namespace DryHireProjectmain {
 			// 
 			// EnableEditingButton
 			// 
-			this->EnableEditingButton->Location = System::Drawing::Point(191, 113);
+			this->EnableEditingButton->Location = System::Drawing::Point(169, 108);
 			this->EnableEditingButton->Name = L"EnableEditingButton";
 			this->EnableEditingButton->Size = System::Drawing::Size(93, 23);
 			this->EnableEditingButton->TabIndex = 15;
 			this->EnableEditingButton->Text = L"Enable editing";
 			this->EnableEditingButton->UseVisualStyleBackColor = true;
 			// 
+			// textBox1
+			// 
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 250.25F));
+			this->textBox1->Location = System::Drawing::Point(24, 137);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(401, 385);
+			this->textBox1->TabIndex = 16;
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
+			this->label9->Location = System::Drawing::Point(29, 113);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(88, 20);
+			this->label9->TabIndex = 17;
+			this->label9->Text = L"Equipment";
+			// 
+			// monthCalendar1
+			// 
+			this->monthCalendar1->Location = System::Drawing::Point(13, 564);
+			this->monthCalendar1->Name = L"monthCalendar1";
+			this->monthCalendar1->TabIndex = 18;
+			// 
+			// monthCalendar2
+			// 
+			this->monthCalendar2->Location = System::Drawing::Point(241, 564);
+			this->monthCalendar2->Name = L"monthCalendar2";
+			this->monthCalendar2->TabIndex = 19;
+			// 
+			// textBox2
+			// 
+			this->textBox2->Location = System::Drawing::Point(434, 482);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(71, 20);
+			this->textBox2->TabIndex = 20;
+			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(997, 720);
+			this->ClientSize = System::Drawing::Size(997, 741);
+			this->Controls->Add(this->textBox2);
+			this->Controls->Add(this->monthCalendar2);
+			this->Controls->Add(this->monthCalendar1);
+			this->Controls->Add(this->label9);
+			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->EnableEditingButton);
 			this->Controls->Add(this->UndoLastSendButton);
 			this->Controls->Add(this->SortDateOrderButton);
@@ -281,7 +333,7 @@ namespace DryHireProjectmain {
 		label1->Text = "Working lable change";
 
 
-
+		label1->Text = textBox1->Text;
 
 	}
 };
