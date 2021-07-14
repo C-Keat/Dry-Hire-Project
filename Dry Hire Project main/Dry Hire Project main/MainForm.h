@@ -50,7 +50,8 @@ namespace DryHireProjectmain {
 	private: System::Windows::Forms::Button^ SortDateOrderButton;
 	private: System::Windows::Forms::Button^ UndoLastSendButton;
 	private: System::Windows::Forms::Button^ EnableEditingButton;
-	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::TextBox^ EquitmentTextBox;
+
 	private: System::Windows::Forms::Label^ label9;
 	private: System::Windows::Forms::MonthCalendar^ monthCalendar1;
 	private: System::Windows::Forms::MonthCalendar^ monthCalendar2;
@@ -95,7 +96,7 @@ namespace DryHireProjectmain {
 			this->SortDateOrderButton = (gcnew System::Windows::Forms::Button());
 			this->UndoLastSendButton = (gcnew System::Windows::Forms::Button());
 			this->EnableEditingButton = (gcnew System::Windows::Forms::Button());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->EquitmentTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->monthCalendar1 = (gcnew System::Windows::Forms::MonthCalendar());
 			this->monthCalendar2 = (gcnew System::Windows::Forms::MonthCalendar());
@@ -253,16 +254,21 @@ namespace DryHireProjectmain {
 			this->EnableEditingButton->Name = L"EnableEditingButton";
 			this->EnableEditingButton->Size = System::Drawing::Size(93, 23);
 			this->EnableEditingButton->TabIndex = 15;
-			this->EnableEditingButton->Text = L"Enable editing";
+			this->EnableEditingButton->Text = L"Toggle Edit";
 			this->EnableEditingButton->UseVisualStyleBackColor = true;
+			this->EnableEditingButton->Click += gcnew System::EventHandler(this, &MainForm::EnableEditingButton_Click);
 			// 
-			// textBox1
+			// EquitmentTextBox
 			// 
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 250.25F));
-			this->textBox1->Location = System::Drawing::Point(24, 137);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(401, 385);
-			this->textBox1->TabIndex = 16;
+			this->EquitmentTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F));
+			this->EquitmentTextBox->Location = System::Drawing::Point(24, 137);
+			this->EquitmentTextBox->Multiline = true;
+			this->EquitmentTextBox->Name = L"EquitmentTextBox";
+			this->EquitmentTextBox->ReadOnly = true;
+			this->EquitmentTextBox->RightToLeft = System::Windows::Forms::RightToLeft::No;
+			this->EquitmentTextBox->Size = System::Drawing::Size(401, 390);
+			this->EquitmentTextBox->TabIndex = 16;
+			this->EquitmentTextBox->TextChanged += gcnew System::EventHandler(this, &MainForm::textBox1_TextChanged);
 			// 
 			// label9
 			// 
@@ -302,7 +308,7 @@ namespace DryHireProjectmain {
 			this->Controls->Add(this->monthCalendar2);
 			this->Controls->Add(this->monthCalendar1);
 			this->Controls->Add(this->label9);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->EquitmentTextBox);
 			this->Controls->Add(this->EnableEditingButton);
 			this->Controls->Add(this->UndoLastSendButton);
 			this->Controls->Add(this->SortDateOrderButton);
@@ -331,10 +337,30 @@ namespace DryHireProjectmain {
 	private: System::Void New_Button_Click(System::Object^ sender, System::EventArgs^ e) {
 
 		label1->Text = "Working lable change";
+		label1->Text = EquitmentTextBox->Text;
 
-
-		label1->Text = textBox1->Text;
+		
 
 	}
-};
+	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+
+
+	}
+	private: System::Void EnableEditingButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		//click on enabl editing button allows for the text box to be editied
+		
+		if (EquitmentTextBox->ReadOnly == false) {
+			EquitmentTextBox->ReadOnly = true;
+		}
+		else
+		{
+			EquitmentTextBox->ReadOnly = false;
+		}
+		
+		
+
+
+
+	}
+	};
 }
