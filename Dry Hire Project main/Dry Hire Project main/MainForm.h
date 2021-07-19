@@ -63,6 +63,7 @@ namespace DryHireProjectmain {
 	private: System::Windows::Forms::CheckBox^ ReturnCheckBox;
 	private: System::Windows::Forms::TextBox^ textBox3;
 	private: System::Windows::Forms::TextBox^ textBox4;
+	private: System::Windows::Forms::CheckBox^ checkBox1;
 
 
 
@@ -115,6 +116,7 @@ namespace DryHireProjectmain {
 			this->ReturnCheckBox = (gcnew System::Windows::Forms::CheckBox());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -371,11 +373,22 @@ namespace DryHireProjectmain {
 			this->textBox4->Size = System::Drawing::Size(129, 20);
 			this->textBox4->TabIndex = 29;
 			// 
+			// checkBox1
+			// 
+			this->checkBox1->AutoSize = true;
+			this->checkBox1->Location = System::Drawing::Point(480, 564);
+			this->checkBox1->Name = L"checkBox1";
+			this->checkBox1->Size = System::Drawing::Size(102, 17);
+			this->checkBox1->TabIndex = 30;
+			this->checkBox1->Text = L"Allow Messages";
+			this->checkBox1->UseVisualStyleBackColor = true;
+			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(997, 741);
+			this->Controls->Add(this->checkBox1);
 			this->Controls->Add(this->textBox4);
 			this->Controls->Add(this->textBox3);
 			this->Controls->Add(this->ReturnCheckBox);
