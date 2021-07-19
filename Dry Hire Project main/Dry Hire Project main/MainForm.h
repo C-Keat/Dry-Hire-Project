@@ -56,6 +56,13 @@ namespace DryHireProjectmain {
 	private: System::Windows::Forms::MonthCalendar^ monthCalendar1;
 	private: System::Windows::Forms::MonthCalendar^ monthCalendar2;
 	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::ListBox^ listBox1;
+	private: System::Windows::Forms::ListBox^ listBox2;
+	private: System::Windows::Forms::ListBox^ listBox3;
+	private: System::Windows::Forms::CheckBox^ PackedCheckBox;
+	private: System::Windows::Forms::CheckBox^ ReturnCheckBox;
+	private: System::Windows::Forms::TextBox^ textBox3;
+	private: System::Windows::Forms::TextBox^ textBox4;
 
 
 
@@ -101,6 +108,13 @@ namespace DryHireProjectmain {
 			this->monthCalendar1 = (gcnew System::Windows::Forms::MonthCalendar());
 			this->monthCalendar2 = (gcnew System::Windows::Forms::MonthCalendar());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
+			this->listBox2 = (gcnew System::Windows::Forms::ListBox());
+			this->listBox3 = (gcnew System::Windows::Forms::ListBox());
+			this->PackedCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->ReturnCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -296,14 +310,79 @@ namespace DryHireProjectmain {
 			// 
 			this->textBox2->Location = System::Drawing::Point(434, 482);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(71, 20);
+			this->textBox2->Size = System::Drawing::Size(90, 20);
 			this->textBox2->TabIndex = 20;
+			// 
+			// listBox1
+			// 
+			this->listBox1->FormattingEnabled = true;
+			this->listBox1->Location = System::Drawing::Point(587, 75);
+			this->listBox1->Name = L"listBox1";
+			this->listBox1->Size = System::Drawing::Size(114, 654);
+			this->listBox1->TabIndex = 21;
+			// 
+			// listBox2
+			// 
+			this->listBox2->FormattingEnabled = true;
+			this->listBox2->Location = System::Drawing::Point(719, 75);
+			this->listBox2->Name = L"listBox2";
+			this->listBox2->Size = System::Drawing::Size(114, 654);
+			this->listBox2->TabIndex = 22;
+			// 
+			// listBox3
+			// 
+			this->listBox3->FormattingEnabled = true;
+			this->listBox3->Location = System::Drawing::Point(852, 75);
+			this->listBox3->Name = L"listBox3";
+			this->listBox3->Size = System::Drawing::Size(114, 654);
+			this->listBox3->TabIndex = 24;
+			// 
+			// PackedCheckBox
+			// 
+			this->PackedCheckBox->AutoSize = true;
+			this->PackedCheckBox->Location = System::Drawing::Point(454, 367);
+			this->PackedCheckBox->Name = L"PackedCheckBox";
+			this->PackedCheckBox->Size = System::Drawing::Size(63, 17);
+			this->PackedCheckBox->TabIndex = 25;
+			this->PackedCheckBox->Text = L"Packed";
+			this->PackedCheckBox->UseVisualStyleBackColor = true;
+			// 
+			// ReturnCheckBox
+			// 
+			this->ReturnCheckBox->AutoSize = true;
+			this->ReturnCheckBox->Location = System::Drawing::Point(454, 390);
+			this->ReturnCheckBox->Name = L"ReturnCheckBox";
+			this->ReturnCheckBox->Size = System::Drawing::Size(58, 17);
+			this->ReturnCheckBox->TabIndex = 26;
+			this->ReturnCheckBox->Text = L"Return";
+			this->ReturnCheckBox->UseVisualStyleBackColor = true;
+			// 
+			// textBox3
+			// 
+			this->textBox3->Location = System::Drawing::Point(278, 63);
+			this->textBox3->Name = L"textBox3";
+			this->textBox3->Size = System::Drawing::Size(129, 20);
+			this->textBox3->TabIndex = 28;
+			// 
+			// textBox4
+			// 
+			this->textBox4->Location = System::Drawing::Point(46, 63);
+			this->textBox4->Name = L"textBox4";
+			this->textBox4->Size = System::Drawing::Size(129, 20);
+			this->textBox4->TabIndex = 29;
 			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(997, 741);
+			this->Controls->Add(this->textBox4);
+			this->Controls->Add(this->textBox3);
+			this->Controls->Add(this->ReturnCheckBox);
+			this->Controls->Add(this->PackedCheckBox);
+			this->Controls->Add(this->listBox3);
+			this->Controls->Add(this->listBox2);
+			this->Controls->Add(this->listBox1);
 			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->monthCalendar2);
 			this->Controls->Add(this->monthCalendar1);
