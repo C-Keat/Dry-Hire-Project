@@ -1,4 +1,5 @@
 #pragma once
+#include<fstream>
 
 namespace DryHireProjectmain {
 
@@ -53,17 +54,28 @@ namespace DryHireProjectmain {
 	private: System::Windows::Forms::TextBox^ EquitmentTextBox;
 
 	private: System::Windows::Forms::Label^ label9;
-	private: System::Windows::Forms::MonthCalendar^ monthCalendar1;
-	private: System::Windows::Forms::MonthCalendar^ monthCalendar2;
-	private: System::Windows::Forms::TextBox^ textBox2;
-	private: System::Windows::Forms::ListBox^ listBox1;
-	private: System::Windows::Forms::ListBox^ listBox2;
-	private: System::Windows::Forms::ListBox^ listBox3;
+	private: System::Windows::Forms::MonthCalendar^ SendCalendar;
+	private: System::Windows::Forms::MonthCalendar^ ReturnCalendar;
+	private: System::Windows::Forms::TextBox^ InUseTextBox;
+
+
+
+
+	private: System::Windows::Forms::ListBox^ InputOrderList;
+	private: System::Windows::Forms::ListBox^ DateOrderList;
+	private: System::Windows::Forms::ListBox^ ReturnList;
+
+
+
+
 	private: System::Windows::Forms::CheckBox^ PackedCheckBox;
 	private: System::Windows::Forms::CheckBox^ ReturnCheckBox;
-	private: System::Windows::Forms::TextBox^ textBox3;
-	private: System::Windows::Forms::TextBox^ textBox4;
-	private: System::Windows::Forms::CheckBox^ checkBox1;
+	private: System::Windows::Forms::TextBox^ LocationTextBox;
+	private: System::Windows::Forms::TextBox^ ClientTextBox;
+	private: System::Windows::Forms::CheckBox^ AllowMessagesTickBox;
+
+
+
 
 
 
@@ -106,17 +118,17 @@ namespace DryHireProjectmain {
 			this->EnableEditingButton = (gcnew System::Windows::Forms::Button());
 			this->EquitmentTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->label9 = (gcnew System::Windows::Forms::Label());
-			this->monthCalendar1 = (gcnew System::Windows::Forms::MonthCalendar());
-			this->monthCalendar2 = (gcnew System::Windows::Forms::MonthCalendar());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
-			this->listBox2 = (gcnew System::Windows::Forms::ListBox());
-			this->listBox3 = (gcnew System::Windows::Forms::ListBox());
+			this->SendCalendar = (gcnew System::Windows::Forms::MonthCalendar());
+			this->ReturnCalendar = (gcnew System::Windows::Forms::MonthCalendar());
+			this->InUseTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->InputOrderList = (gcnew System::Windows::Forms::ListBox());
+			this->DateOrderList = (gcnew System::Windows::Forms::ListBox());
+			this->ReturnList = (gcnew System::Windows::Forms::ListBox());
 			this->PackedCheckBox = (gcnew System::Windows::Forms::CheckBox());
 			this->ReturnCheckBox = (gcnew System::Windows::Forms::CheckBox());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
+			this->LocationTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->ClientTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->AllowMessagesTickBox = (gcnew System::Windows::Forms::CheckBox());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -296,48 +308,48 @@ namespace DryHireProjectmain {
 			this->label9->TabIndex = 17;
 			this->label9->Text = L"Equipment";
 			// 
-			// monthCalendar1
+			// SendCalendar
 			// 
-			this->monthCalendar1->Location = System::Drawing::Point(13, 564);
-			this->monthCalendar1->Name = L"monthCalendar1";
-			this->monthCalendar1->TabIndex = 18;
+			this->SendCalendar->Location = System::Drawing::Point(13, 564);
+			this->SendCalendar->Name = L"SendCalendar";
+			this->SendCalendar->TabIndex = 18;
 			// 
-			// monthCalendar2
+			// ReturnCalendar
 			// 
-			this->monthCalendar2->Location = System::Drawing::Point(241, 564);
-			this->monthCalendar2->Name = L"monthCalendar2";
-			this->monthCalendar2->TabIndex = 19;
+			this->ReturnCalendar->Location = System::Drawing::Point(241, 564);
+			this->ReturnCalendar->Name = L"ReturnCalendar";
+			this->ReturnCalendar->TabIndex = 19;
 			// 
-			// textBox2
+			// InUseTextBox
 			// 
-			this->textBox2->Location = System::Drawing::Point(434, 482);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(90, 20);
-			this->textBox2->TabIndex = 20;
+			this->InUseTextBox->Location = System::Drawing::Point(434, 482);
+			this->InUseTextBox->Name = L"InUseTextBox";
+			this->InUseTextBox->Size = System::Drawing::Size(90, 20);
+			this->InUseTextBox->TabIndex = 20;
 			// 
-			// listBox1
+			// InputOrderList
 			// 
-			this->listBox1->FormattingEnabled = true;
-			this->listBox1->Location = System::Drawing::Point(587, 75);
-			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(114, 654);
-			this->listBox1->TabIndex = 21;
+			this->InputOrderList->FormattingEnabled = true;
+			this->InputOrderList->Location = System::Drawing::Point(587, 75);
+			this->InputOrderList->Name = L"InputOrderList";
+			this->InputOrderList->Size = System::Drawing::Size(114, 654);
+			this->InputOrderList->TabIndex = 21;
 			// 
-			// listBox2
+			// DateOrderList
 			// 
-			this->listBox2->FormattingEnabled = true;
-			this->listBox2->Location = System::Drawing::Point(719, 75);
-			this->listBox2->Name = L"listBox2";
-			this->listBox2->Size = System::Drawing::Size(114, 654);
-			this->listBox2->TabIndex = 22;
+			this->DateOrderList->FormattingEnabled = true;
+			this->DateOrderList->Location = System::Drawing::Point(719, 75);
+			this->DateOrderList->Name = L"DateOrderList";
+			this->DateOrderList->Size = System::Drawing::Size(114, 654);
+			this->DateOrderList->TabIndex = 22;
 			// 
-			// listBox3
+			// ReturnList
 			// 
-			this->listBox3->FormattingEnabled = true;
-			this->listBox3->Location = System::Drawing::Point(852, 75);
-			this->listBox3->Name = L"listBox3";
-			this->listBox3->Size = System::Drawing::Size(114, 654);
-			this->listBox3->TabIndex = 24;
+			this->ReturnList->FormattingEnabled = true;
+			this->ReturnList->Location = System::Drawing::Point(852, 75);
+			this->ReturnList->Name = L"ReturnList";
+			this->ReturnList->Size = System::Drawing::Size(114, 654);
+			this->ReturnList->TabIndex = 24;
 			// 
 			// PackedCheckBox
 			// 
@@ -359,46 +371,46 @@ namespace DryHireProjectmain {
 			this->ReturnCheckBox->Text = L"Return";
 			this->ReturnCheckBox->UseVisualStyleBackColor = true;
 			// 
-			// textBox3
+			// LocationTextBox
 			// 
-			this->textBox3->Location = System::Drawing::Point(278, 63);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(129, 20);
-			this->textBox3->TabIndex = 28;
+			this->LocationTextBox->Location = System::Drawing::Point(278, 63);
+			this->LocationTextBox->Name = L"LocationTextBox";
+			this->LocationTextBox->Size = System::Drawing::Size(129, 20);
+			this->LocationTextBox->TabIndex = 28;
 			// 
-			// textBox4
+			// ClientTextBox
 			// 
-			this->textBox4->Location = System::Drawing::Point(46, 63);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(129, 20);
-			this->textBox4->TabIndex = 29;
+			this->ClientTextBox->Location = System::Drawing::Point(46, 63);
+			this->ClientTextBox->Name = L"ClientTextBox";
+			this->ClientTextBox->Size = System::Drawing::Size(129, 20);
+			this->ClientTextBox->TabIndex = 29;
 			// 
-			// checkBox1
+			// AllowMessagesTickBox
 			// 
-			this->checkBox1->AutoSize = true;
-			this->checkBox1->Location = System::Drawing::Point(480, 564);
-			this->checkBox1->Name = L"checkBox1";
-			this->checkBox1->Size = System::Drawing::Size(102, 17);
-			this->checkBox1->TabIndex = 30;
-			this->checkBox1->Text = L"Allow Messages";
-			this->checkBox1->UseVisualStyleBackColor = true;
+			this->AllowMessagesTickBox->AutoSize = true;
+			this->AllowMessagesTickBox->Location = System::Drawing::Point(480, 564);
+			this->AllowMessagesTickBox->Name = L"AllowMessagesTickBox";
+			this->AllowMessagesTickBox->Size = System::Drawing::Size(102, 17);
+			this->AllowMessagesTickBox->TabIndex = 30;
+			this->AllowMessagesTickBox->Text = L"Allow Messages";
+			this->AllowMessagesTickBox->UseVisualStyleBackColor = true;
 			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(997, 741);
-			this->Controls->Add(this->checkBox1);
-			this->Controls->Add(this->textBox4);
-			this->Controls->Add(this->textBox3);
+			this->Controls->Add(this->AllowMessagesTickBox);
+			this->Controls->Add(this->ClientTextBox);
+			this->Controls->Add(this->LocationTextBox);
 			this->Controls->Add(this->ReturnCheckBox);
 			this->Controls->Add(this->PackedCheckBox);
-			this->Controls->Add(this->listBox3);
-			this->Controls->Add(this->listBox2);
-			this->Controls->Add(this->listBox1);
-			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->monthCalendar2);
-			this->Controls->Add(this->monthCalendar1);
+			this->Controls->Add(this->ReturnList);
+			this->Controls->Add(this->DateOrderList);
+			this->Controls->Add(this->InputOrderList);
+			this->Controls->Add(this->InUseTextBox);
+			this->Controls->Add(this->ReturnCalendar);
+			this->Controls->Add(this->SendCalendar);
 			this->Controls->Add(this->label9);
 			this->Controls->Add(this->EquitmentTextBox);
 			this->Controls->Add(this->EnableEditingButton);
