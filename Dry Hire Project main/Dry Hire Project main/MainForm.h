@@ -1,6 +1,8 @@
 #pragma once
 #include<fstream>
 
+
+
 namespace DryHireProjectmain {
 
 	using namespace System;
@@ -9,6 +11,7 @@ namespace DryHireProjectmain {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::IO;
 
 	/// <summary>
 	/// Summary for MainForm
@@ -35,6 +38,7 @@ namespace DryHireProjectmain {
 				delete components;
 			}
 		}
+	
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
@@ -73,6 +77,7 @@ namespace DryHireProjectmain {
 	private: System::Windows::Forms::TextBox^ LocationTextBox;
 	private: System::Windows::Forms::TextBox^ ClientTextBox;
 	private: System::Windows::Forms::CheckBox^ AllowMessagesTickBox;
+	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
 
 
 
@@ -86,12 +91,15 @@ namespace DryHireProjectmain {
 
 
 	protected:
+		
 
 	private:
 		/// <summary>
 		/// Required designer variable.
+		
 		/// </summary>
 		System::ComponentModel::Container ^components;
+		
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -129,6 +137,7 @@ namespace DryHireProjectmain {
 			this->LocationTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->ClientTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->AllowMessagesTickBox = (gcnew System::Windows::Forms::CheckBox());
+			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -440,9 +449,25 @@ namespace DryHireProjectmain {
 	}
 	private: System::Void New_Button_Click(System::Object^ sender, System::EventArgs^ e) {
 
-		label1->Text = "Working lable change";
-		label1->Text = EquitmentTextBox->Text;
+		// deslect the currently selected file, then clear all the text boxes
 
+
+		//righting what send to boys/save should be
+		//display a saveFileDialog so the user can save a text file
+		//assign to new button
+		SaveFileDialog^ saveFileDialog1;
+
+		saveFileDialog1->Filter = "Text File";
+		saveFileDialog1->Title = "save a text file";//this could be the location of client name?
+		saveFileDialog1->ShowDialog();
+
+		//if the file name is emtpy string, open it for saveing. 
+		if (saveFileDialog1->FileName != "") {
+			//save text file through fileSteam created by OpenFile method.
+
+			System::IO::FileSteam ^ fs = safe_cast\<System::IO::FileStream*>(saveFileDialog1->OpenFile());
+
+		}
 		
 
 	}
